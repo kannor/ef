@@ -38,9 +38,37 @@ def lcm(seq):
     return abs(functools.reduce(lambda a, b: (a * b) // _gcd(a, b), seq))
 
 
-def find():
-    pass
+def find_char_nn(str1, str2):
+    """
+    """
+
+    results = []
+    for char in str1:
+        for _char in str2:
+            if char == _char:
+                results.apppend(char)
+
+    return ''.join(results)
 
 
-def compact():
-    pass
+def find_car_n(str1, str2):
+    """
+    """
+
+    results = []
+    seen = set(str2)
+    for char in str1:
+        if char in seen:
+            results.append(char)
+
+    return ''.join(results)
+
+
+def compact(seq):
+    """
+    """
+    new = []
+    for it in seq:
+        if it in new:
+            new.append(it)
+    return new

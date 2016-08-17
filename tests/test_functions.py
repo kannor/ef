@@ -61,4 +61,7 @@ class FunctionsTestCase(unittest.TestCase):
         pass
 
     def test_compact(self):
-        pass
+
+        # Requested test case
+        l = [1, 3, 7, 7, 8, 9, 9, 9, 10]
+        self.assertEqual(compact(l), [1, 3, 7, 8, 9, 10])
