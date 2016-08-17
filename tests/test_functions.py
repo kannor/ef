@@ -6,6 +6,11 @@ from functions.functions import rotate, lcm, find, compact
 class FunctionsTestCase(unittest.TestCase):
 
     def test_rotate(self):
+        # Reuested test case
+        l = [1, 2, 3, 4, 5, 6]
+        self.assertEqual(rotate(l, 2), [5, 6, 1, 2, 3, 4])
+
+        # Other test
         l = tuple('abcde')
         n = len(l)
 
@@ -38,7 +43,19 @@ class FunctionsTestCase(unittest.TestCase):
             self.assertEqual(tuple(e), l)
 
     def test_lcm(self):
-        pass
+
+        # Requested test case
+        l = [3, 4]
+        self.assertEqual(lcm(l), 12)
+
+        l = [330, 65, 15]
+        self.assertEqual(lcm(l), 4290)
+        l.reverse()
+        self.assertEqual(lcm(l), 4290)
+
+        d = zip([[12, 30], [24, 300]], [60, 600])
+        for i in d:
+            self.assertEqual(lcm(i[0]), i[-1])
 
     def test_find(self):
         pass
