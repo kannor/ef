@@ -83,3 +83,6 @@ class FunctionsTestCase(unittest.TestCase):
             l = random.sample(range(100), i)
             l = sorted(l)
             self.assertEqual(compact(l), list(sorted(set(l))))
+
+if __name__ == "__main__":
+    unittest.main()
