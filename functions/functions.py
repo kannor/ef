@@ -40,19 +40,34 @@ def lcm(seq):
 
 def find_char_nn(str1, str2):
     """
+    Inersection of str1 and str2 with O(N*N)
+
+    Args:'
+        str1: String
+        str2: String
+    Returns:
+        Inersection of str1 and str2 else ''
     """
 
     results = []
     for char in str1:
         for _char in str2:
             if char == _char:
-                results.apppend(char)
+                results.append(char)
+                break
 
     return ''.join(results)
 
 
 def find_car_n(str1, str2):
     """
+    Inersection of str1 and str2 with O(N)
+
+    Args:'
+        str1: String
+        str2: String
+    Returns:
+        Inersection of str1 and str2 else ''
     """
 
     results = []
@@ -66,9 +81,15 @@ def find_car_n(str1, str2):
 
 def compact(seq):
     """
+    Unique enties of a sotred array.
+
+    Args:
+        seq: sorted array
     """
+
     new = []
     for it in seq:
-        if it in new:
+        if it not in new:
             new.append(it)
+
     return new

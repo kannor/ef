@@ -1,6 +1,8 @@
+import random
 import unittest
 
-from functions.functions import rotate, lcm, find, compact
+from functions.functions import (
+    rotate, lcm, compact, find_char_nn, find_car_n)
 
 
 class FunctionsTestCase(unittest.TestCase):
@@ -48,6 +50,7 @@ class FunctionsTestCase(unittest.TestCase):
         l = [3, 4]
         self.assertEqual(lcm(l), 12)
 
+        # Others
         l = [330, 65, 15]
         self.assertEqual(lcm(l), 4290)
         l.reverse()
@@ -58,10 +61,25 @@ class FunctionsTestCase(unittest.TestCase):
             self.assertEqual(lcm(i[0]), i[-1])
 
     def test_find(self):
-        pass
+        string1 = "if I'm playing with a sorting function and observe function"
+        string2 = "I need to look at what the algorithm is doing in case."
+
+        self.assertEqual(find_char_nn(string1, string2),
+                         find_car_n(string1, string2))
 
     def test_compact(self):
 
         # Requested test case
         l = [1, 3, 7, 7, 8, 9, 9, 9, 10]
         self.assertEqual(compact(l), [1, 3, 7, 8, 9, 10])
+
+        n = len(l)
+
+        # Others
+        l = sorted([1, 2, 3, 1, 4, 5, 5, 2, 3, 9, 10, 11, 3, 10, 9, 0, 7])
+        self.assertEqual(compact(l), list(sorted(set(l))))
+
+        for i in range(n):
+            l = random.sample(range(100), i)
+            l = sorted(l)
+            self.assertEqual(compact(l), list(sorted(set(l))))
